@@ -1,0 +1,24 @@
+[package]
+name = "doubledoor-evidence"
+description = "Unified evidence model: Doubledoor-native evidence plus optional ELCI providers (Kaptaind, Fract, Traci, ZOC, Sore, Padagonia) for Doubledoor (Phase V)"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+doubledoor-core.workspace = true
+doubledoor-git.workspace = true
+doubledoor-reconcile.workspace = true
+doubledoor-surface.workspace = true
+doubledoor-validate.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints.rust]
+unsafe_code = "forbid"

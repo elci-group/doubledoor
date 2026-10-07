@@ -1,0 +1,22 @@
+[package]
+name = "doubledoor-remote"
+description = "Remote workspaces, Dream VPS placement, and canonical/ghost transport for Doubledoor (Phase VII)"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+doubledoor-core.workspace = true
+doubledoor-git.workspace = true
+doubledoor-protocol.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints.rust]
+unsafe_code = "forbid"

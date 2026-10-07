@@ -1,0 +1,17 @@
+[package]
+name = "doubledoor-locksmith"
+description = "LockAuthority adapter to Locksmith leases and contention notices for Doubledoor"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+doubledoor-core.workspace = true
+doubledoor-trust.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[lints.rust]
+unsafe_code = "forbid"

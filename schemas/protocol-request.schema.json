@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "doubledoor.protocol/v1/request",
+  "title": "doubledoor.protocol/v1 request (one JSON object per line)",
+  "type": "object",
+  "required": ["method"],
+  "properties": {
+    "id": { "description": "Echoed on the response; any JSON value" },
+    "method": { "type": "string", "description": "A method from `describe` / `hello`.methods" },
+    "params": { "type": "object", "description": "Named parameters; unknown names are rejected (invalid_params)" }
+  }
+}

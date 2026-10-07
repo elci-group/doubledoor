@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "doubledoor.protocol/v1/response",
+  "title": "doubledoor.protocol/v1 response",
+  "type": "object",
+  "required": ["id", "ok"],
+  "properties": {
+    "id": {},
+    "ok": { "type": "boolean" },
+    "result": { "description": "Present when ok" },
+    "error": { "$ref": "protocol-error.schema.json" }
+  }
+}

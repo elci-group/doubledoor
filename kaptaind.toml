@@ -1,0 +1,46 @@
+# kaptaind configuration — modeled on the elci-group house profile
+# (3form/deliver): actuate mode, gated by the full workspace test suite.
+
+[trust]
+execution = "trusted"
+
+[watch]
+path = "."
+recursive = true
+ignore_file = ".kaptainignore"
+
+[cluster]
+window = 5
+
+[weights]
+s = 0.35
+a = 0.30
+d = 0.20
+r = 0.15
+
+[version_thresholds]
+minor = 0.6
+patch = 0.1
+
+[push]
+enabled = true
+branch = "main"
+
+[capabilities]
+network_push = true
+
+[operation]
+mode = "actuate"
+
+[ship]
+enabled = true
+
+[ratelimit]
+min_commit_interval = 10
+
+[test]
+command = "cargo test --workspace"
+required = true
+
+[staging]
+mode = "all"

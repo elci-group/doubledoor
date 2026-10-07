@@ -1,0 +1,353 @@
+# Phase I deliverable gate (ELCI directive §45, §41)
+[[file]]
+path = "crates/doubledoor-core/src/lib.rs"
+required = true
+forbid_regex = ["unsafe \\{", "unsafe fn", "unsafe impl", "unsafe trait", "TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-core/src/state.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!"]
+
+[[file]]
+path = "crates/doubledoor-git/src/lib.rs"
+required = true
+forbid_regex = ["Command::new\\(\"sh\"\\)", "TODO", "FIXME"]
+
+[[file]]
+path = "crates/doubledoor-locksmith/src/lib.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!"]
+
+[[file]]
+path = "crates/doubledoor-journal/src/lib.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!"]
+
+[[file]]
+path = "crates/doubledoor-policy/src/lib.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!"]
+
+[[file]]
+path = "crates/doubledoor-protocol/src/envelope.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!"]
+
+[[file]]
+path = "crates/doubledoor-cli/src/main.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!"]
+
+[[file]]
+path = "crates/doubledoor-cli/src/commands.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "tests/integration/isolation.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "docs/state-machine.md"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "docs/exit-criterion.md"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "docs/cli.md"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+# Phase II deliverable gate (ELCI directive §46): canonical commit watcher,
+# textual GhostDiff, file/symbol surface model, event delivery,
+# accept/defer/reject.
+[[file]]
+path = "crates/doubledoor-ghost/src/generate.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-ghost/src/diff.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-ghost/src/classify.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-ghost/src/apply.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!", "Command::new"]
+
+[[file]]
+path = "crates/doubledoor-surface/src/lib.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-journal/src/events.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-protocol/src/event.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "crates/doubledoor-cli/src/ghosts.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!"]
+
+[[file]]
+path = "tests/integration/ghosts.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+# Phase III deliverable gate (ELCI directive §47): symbol graph, API
+# signature tracking, dependency relationships, Cargo mutation analysis,
+# assumption invalidation.
+[[file]]
+path = "crates/doubledoor-surface/src/rust.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\(", "unsafe \\{"]
+
+[[file]]
+path = "crates/doubledoor-surface/src/semantic.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-surface/src/cargo.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-surface/src/cratemap.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-ghost/src/assess.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "tests/semantic/cross_file.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+# Phase IV deliverable gate (ELCI directive §48): selective import,
+# candidate construction, conflict graph, validation pipeline, CAS promotion.
+[[file]]
+path = "crates/doubledoor-reconcile/src/candidate.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-reconcile/src/merge.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-reconcile/src/import.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-reconcile/src/promote.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\(", "update-ref", "--force"]
+
+[[file]]
+path = "crates/doubledoor-validate/src/lib.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\(", "Command::new\\(\"sh\"\\)"]
+
+[[file]]
+path = "crates/doubledoor-cli/src/reconcile.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "tests/reconcile/convergence.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+# Phase V deliverable gate (ELCI directive §49): optional evidence
+# providers (Kaptaind, Fract, Traci, Padagonia, ZOC, Sore) behind one
+# unified evidence model.
+[[file]]
+path = "crates/doubledoor-core/src/evidence.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-evidence/src/unify.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-evidence/src/providers.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\(", "Command::new\\(\"sh\"\\)", "\"-c\""]
+
+[[file]]
+path = "crates/doubledoor-evidence/src/internal.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-evidence/src/padagonia.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "tests/evidence/unified.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+# Phase VI deliverable gate (ELCI directive §50): structured protocol,
+# event subscription, automatic low-risk acceptance policies, capability
+# negotiation, machine-readable reconciliation reports.
+[[file]]
+path = "crates/doubledoor-protocol/src/rpc.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\("]
+
+[[file]]
+path = "crates/doubledoor-cli/src/agent.rs"
+required = true
+forbid_regex = ["TODO", "FIXME", "unimplemented!", "todo!\\(", "Command::new\\(\"sh\"\\)", "unsafe"]
+
+[[file]]
+path = "schemas/protocol-request.schema.json"
+required = true
+
+[[file]]
+path = "schemas/protocol-response.schema.json"
+required = true
+
+[[file]]
+path = "schemas/protocol-error.schema.json"
+required = true
+
+[[file]]
+path = "schemas/protocol-notification.schema.json"
+required = true
+
+[[file]]
+path = "schemas/hello-result.schema.json"
+required = true
+
+[[file]]
+path = "schemas/report.schema.json"
+required = true
+
+[[file]]
+path = "docs/agent-protocol.md"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+[[file]]
+path = "tests/agent/protocol.rs"
+required = true
+forbid_regex = ["TODO", "FIXME"]
+
+[[command]]
+name = "cargo fmt --check"
+cmd = ["cargo", "fmt", "--check"]
+expect_exit = 0
+timeout_secs = 120
+
+[[command]]
+name = "cargo clippy"
+cmd = ["cargo", "clippy", "--all-targets", "--all-features"]
+expect_exit = 0
+timeout_secs = 300
+
+[[command]]
+name = "cargo test --workspace"
+cmd = ["cargo", "test", "--workspace"]
+expect_exit = 0
+timeout_secs = 300
+stdout_contains = ["test result: ok"]
+
+[[command]]
+name = "cargo doc"
+cmd = ["cargo", "doc", "--no-deps", "--workspace"]
+expect_exit = 0
+timeout_secs = 300
+
+[[command]]
+name = "doubledoor --help"
+cmd = ["cargo", "run", "-q", "-p", "doubledoor-cli", "--", "--help"]
+expect_exit = 0
+stdout_contains = ["EXIT CODES"]
+
+[[command]]
+name = "doubledoor --help lists Phase II commands"
+cmd = ["cargo", "run", "-q", "-p", "doubledoor-cli", "--", "--help"]
+expect_exit = 0
+stdout_contains = ["watch", "events", "ghosts", "accept", "defer", "reject"]
+
+[[command]]
+name = "Phase II exit criterion"
+cmd = ["cargo", "test", "-q", "-p", "doubledoor-cli", "--test", "ghosts"]
+expect_exit = 0
+timeout_secs = 300
+stdout_contains = ["test result: ok"]
+
+[[command]]
+name = "Phase III exit criterion"
+cmd = ["cargo", "test", "-q", "-p", "doubledoor-cli", "--test", "semantic"]
+expect_exit = 0
+timeout_secs = 300
+stdout_contains = ["test result: ok"]
+
+[[command]]
+name = "doubledoor --help lists Phase III commands"
+cmd = ["cargo", "run", "-q", "-p", "doubledoor-cli", "--", "--help"]
+expect_exit = 0
+stdout_contains = ["surfaces"]
+
+[[command]]
+name = "Phase IV exit criterion"
+cmd = ["cargo", "test", "-q", "-p", "doubledoor-cli", "--test", "reconcile"]
+expect_exit = 0
+timeout_secs = 600
+stdout_contains = ["test result: ok"]
+
+[[command]]
+name = "doubledoor --help lists Phase IV commands"
+cmd = ["cargo", "run", "-q", "-p", "doubledoor-cli", "--", "--help"]
+expect_exit = 0
+stdout_contains = ["reconcile", "validate", "promote", "candidate", "discard"]
+
+[[command]]
+name = "Phase V exit criterion"
+cmd = ["cargo", "test", "-q", "-p", "doubledoor-cli", "--test", "evidence"]
+expect_exit = 0
+timeout_secs = 900
+stdout_contains = ["test result: ok"]
+
+[[command]]
+name = "Phase VI exit criterion"
+cmd = ["cargo", "test", "-q", "-p", "doubledoor-cli", "--test", "agent"]
+expect_exit = 0
+timeout_secs = 600
+stdout_contains = ["test result: ok"]
+
+[[command]]
+name = "doubledoor --help lists Phase VI commands"
+cmd = ["cargo", "run", "-q", "-p", "doubledoor-cli", "--", "--help"]
+expect_exit = 0
+stdout_contains = ["serve", "rpc", "capabilities", "report", "policy"]

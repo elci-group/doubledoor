@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "doubledoor.protocol/v1/hello-result",
+  "title": "Negotiated contract returned by `hello` (and `doubledoor capabilities`)",
+  "type": "object",
+  "required": ["protocol", "server", "schemas", "methods", "capabilities", "granted", "unsupported", "exit_codes", "limits"],
+  "properties": {
+    "protocol": { "type": "string", "enum": ["doubledoor.protocol/v1"] },
+    "server": { "type": "object", "required": ["name", "version"] },
+    "schemas": { "type": "object", "required": ["envelope", "protocol", "report", "evidence"] },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "doc", "params", "result", "streams"],
+        "properties": {
+          "name": { "type": "string" },
+          "params": { "type": "array", "items": { "type": "object", "required": ["name", "type", "required", "doc"] } },
+          "streams": { "type": "boolean" }
+        }
+      }
+    },
+    "capabilities": { "type": "object", "required": ["offered", "auto_accept_levels", "reconcile_modes", "transports", "evidence_providers"] },
+    "granted": { "type": "array", "items": { "type": "string" } },
+    "unsupported": { "type": "array", "items": { "type": "string" } },
+    "exit_codes": { "type": "array", "items": { "type": "object", "required": ["code", "kind", "retryable", "meaning"] } },
+    "limits": { "type": "object", "required": ["max_request_bytes"] }
+  }
+}

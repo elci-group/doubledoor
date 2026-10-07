@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "doubledoor.protocol/v1/notification",
+  "title": "Server push for an active subscription",
+  "type": "object",
+  "required": ["notification", "subscription", "event"],
+  "properties": {
+    "notification": { "type": "string", "enum": ["event"] },
+    "subscription": { "type": "integer" },
+    "event": {
+      "type": "object",
+      "required": ["seq", "at_millis", "event", "session"],
+      "properties": {
+        "seq": { "type": "integer", "minimum": 1 },
+        "at_millis": { "type": "integer" },
+        "event": { "type": "string", "enum": ["ghost.available", "ghost.assessed", "session.state", "candidate.built", "candidate.validated", "candidate.promoted"] },
+        "session": { "type": "string" }
+      }
+    }
+  }
+}

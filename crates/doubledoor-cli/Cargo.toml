@@ -1,0 +1,88 @@
+[package]
+name = "doubledoor-cli"
+description = "The `doubledoor` command-line interface (orchestration layer)"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+doubledoor-core.workspace = true
+doubledoor-evidence.workspace = true
+doubledoor-ghost.workspace = true
+doubledoor-git.workspace = true
+doubledoor-journal.workspace = true
+doubledoor-locksmith.workspace = true
+doubledoor-policy.workspace = true
+doubledoor-protocol.workspace = true
+doubledoor-reconcile.workspace = true
+doubledoor-remote.workspace = true
+doubledoor-surface.workspace = true
+doubledoor-validate.workspace = true
+clap.workspace = true
+form3.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[dev-dependencies]
+doubledoor-journal.workspace = true
+tempfile.workspace = true
+uuid.workspace = true
+
+# The end-to-end suites live at the workspace root (tests/integration/) but
+# belong to this package so Cargo builds the `doubledoor` binary first and
+# injects CARGO_BIN_EXE_doubledoor.
+[[test]]
+name = "isolation"
+path = "../../tests/integration/isolation.rs"
+
+[[test]]
+name = "abandon"
+path = "../../tests/integration/abandon.rs"
+
+[[test]]
+name = "recovery"
+path = "../../tests/integration/recovery.rs"
+
+[[test]]
+name = "hooks"
+path = "../../tests/integration/hooks.rs"
+
+[[test]]
+name = "ghosts"
+path = "../../tests/integration/ghosts.rs"
+
+[[test]]
+name = "semantic"
+path = "../../tests/semantic/cross_file.rs"
+
+[[test]]
+name = "reconcile"
+path = "../../tests/reconcile/convergence.rs"
+
+[[test]]
+name = "evidence"
+path = "../../tests/evidence/unified.rs"
+
+[[test]]
+name = "agent"
+path = "../../tests/agent/protocol.rs"
+
+[[test]]
+name = "distributed"
+path = "../../tests/distributed/remote.rs"
+
+[[test]]
+name = "exit_codes"
+path = "../../tests/integration/exit_codes.rs"
+
+[[bin]]
+name = "doubledoor"
+path = "src/main.rs"
+
+[lints.rust]
+unsafe_code = "forbid"

@@ -1,0 +1,18 @@
+[package]
+name = "doubledoor-protocol"
+description = "Schema-versioned envelopes and wire/CLI representations for Doubledoor"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+doubledoor-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"

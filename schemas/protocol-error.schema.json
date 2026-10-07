@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "doubledoor.protocol/v1/error",
+  "title": "Structured error (protocol responses, and CLI stderr under --format json as {\"error\": …})",
+  "type": "object",
+  "required": ["code", "kind", "retryable", "message"],
+  "properties": {
+    "code": { "type": "integer", "minimum": 1, "maximum": 12, "description": "Stable §30 exit code" },
+    "kind": { "type": "string", "description": "Stable machine name: usage, policy_denied, contention_without_notice, isolation_failed, not_found, invalid_transition, corrupt_metadata, internal, not_implemented, conflict, lock_not_permitted, canonical_advanced, or a protocol kind (parse_error, unknown_method, invalid_params, handshake_required, unsupported_protocol, capability_unavailable, request_too_large)" },
+    "retryable": { "type": "boolean" },
+    "message": { "type": "string", "description": "For humans; agents key off code/kind" }
+  }
+}

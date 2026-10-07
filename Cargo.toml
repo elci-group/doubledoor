@@ -1,0 +1,57 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/doubledoor-cli",
+    "crates/doubledoor-core",
+    "crates/doubledoor-evidence",
+    "crates/doubledoor-ghost",
+    "crates/doubledoor-git",
+    "crates/doubledoor-journal",
+    "crates/doubledoor-locksmith",
+    "crates/doubledoor-policy",
+    "crates/doubledoor-protocol",
+    "crates/doubledoor-reconcile",
+    "crates/doubledoor-remote",
+    "crates/doubledoor-surface",
+    "crates/doubledoor-trust",
+    "crates/doubledoor-validate",
+]
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/elci-group/doubledoor"
+
+[workspace.dependencies]
+doubledoor-core = { path = "crates/doubledoor-core" }
+doubledoor-ghost = { path = "crates/doubledoor-ghost" }
+doubledoor-git = { path = "crates/doubledoor-git" }
+doubledoor-locksmith = { path = "crates/doubledoor-locksmith" }
+doubledoor-policy = { path = "crates/doubledoor-policy" }
+doubledoor-journal = { path = "crates/doubledoor-journal" }
+doubledoor-protocol = { path = "crates/doubledoor-protocol" }
+doubledoor-surface = { path = "crates/doubledoor-surface" }
+doubledoor-reconcile = { path = "crates/doubledoor-reconcile" }
+doubledoor-validate = { path = "crates/doubledoor-validate" }
+doubledoor-evidence = { path = "crates/doubledoor-evidence" }
+doubledoor-remote = { path = "crates/doubledoor-remote" }
+doubledoor-trust = { path = "crates/doubledoor-trust" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+ciborium = "0.2"
+uuid = { version = "1", features = ["v4", "serde"] }
+thiserror = "2"
+tracing = "0.1"
+proptest = "1"
+tempfile = "3"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+clap = { version = "4", features = ["derive"] }
+syn = { version = "2", features = ["full", "visit", "extra-traits"] }
+quote = "1"
+proc-macro2 = { version = "1", features = ["span-locations"] }
+toml = "0.8"
+form3 = { path = "../3form" }
+
+[profile.release]
+lto = "thin"

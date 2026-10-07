@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "doubledoor.report/v1",
+  "title": "Machine-readable session report with next actions",
+  "type": "object",
+  "required": ["schema", "session", "state", "auto_accept", "ghosts", "candidate", "next_actions"],
+  "properties": {
+    "schema": { "type": "string", "enum": ["doubledoor.report/v1"] },
+    "session": { "type": "object", "required": ["id", "actor", "intent", "state", "base_commit"] },
+    "state": { "type": "string" },
+    "auto_accept": { "type": "string", "enum": ["off", "independent", "dependency_relevant"] },
+    "ghosts": {
+      "type": "object",
+      "required": ["pending", "deferred", "accepted", "rejected", "independent_undecided"],
+      "properties": {
+        "pending": { "type": "array", "items": { "type": "object", "required": ["id", "classification", "invalidated_assumptions"] } },
+        "deferred": { "type": "integer" },
+        "accepted": { "type": "integer" },
+        "rejected": { "type": "integer" },
+        "independent_undecided": { "type": "integer" }
+      }
+    },
+    "candidate": {
+      "type": ["object", "null"],
+      "required": ["record", "validation", "evidence"]
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action", "params", "requires", "reason"],
+        "properties": {
+          "action": { "type": "string", "description": "A protocol method name, or `wait`" },
+          "params": { "type": "object", "description": "Ready to pass to the method, plus `requires`" },
+          "requires": { "type": "array", "items": { "type": "string" } },
+          "reason": { "type": "string" }
+        }
+      }
+    }
+  }
+}

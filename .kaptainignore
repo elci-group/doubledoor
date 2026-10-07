@@ -1,0 +1,15 @@
+# Common
+.git
+.kaptaind
+.DS_Store
+*.swp
+*.swo
+
+# Rust
+target
+
+# Local tool state
+.skillastic
+.lwoodz
+.uni
+.traci

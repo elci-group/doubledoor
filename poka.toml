@@ -1,0 +1,11 @@
+[project]
+name = "doubledoor"
+
+[tools]
+lwoodz = true
+traci = true
+
+[rules]
+documentation = true
+security = true
+testing = true
