@@ -9,3 +9,4 @@
 .traci/
 *.log
 .env
+.azusa/
