@@ -1,0 +1,32 @@
+# ELCI project manifest — ELCI-RGCA-001 §5
+# Provisional (Phase 1 machine draft). Human review required for Tier-S/A.
+schema_version = "1.0"
+
+[project]
+id = "doubledoor"
+name = "doubledoor"
+descriptor = "When two agents want the same files, Doubledoor keeps both working: a speculative concurrency layer for git repos that hands a denied actor an isolated worktree session, watches for overlapping ghost work, and reconciles, validates, or promotes each attempt — with policy gates and an append-only journal."
+status = "active"
+maturity = "beta"
+class = "library"
+
+[ownership]
+organisation = "elci-group"
+maintainer = "ELCI Group"
+
+[architecture]
+independent_boundary = true
+boundary_reason = "Provisional Phase 1 classification (tier A); pending §17 rationalisation review."
+parent = []
+capabilities = []
+consumers = []
+
+[authority]
+human_write_authority = true
+agent_write_authority = false
+autonomous_operation = false
+
+[lifecycle]
+introduced = "2026"
+supersedes = []
+superseded_by = []
